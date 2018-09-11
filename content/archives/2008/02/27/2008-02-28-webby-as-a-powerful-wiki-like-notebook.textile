@@ -1,0 +1,27 @@
+---
+date: "2008-02-28T00:00:00Z"
+tags:
+- webby
+- ruby
+- heel
+- wiki
+title: Webby as a powerful wiki-like notebook
+---
+
+
+
+h1. Introduction
+
+I have often look at wikis, trying to find a nice tool for taking my notes and formating them. Have many ideas in my head, like to write them down and visualize it. Wiki is great for that but always a bit heavy to "deploy".
+
+Continuesly seeking for new ruby things, I heard about "Webby":http://webby.rubyforge.org/, a lightweight web publishing system. Simply taking your pages (textile, html, erb, aso...) and generate a static website. Run "Heel":http://copiousfreetime.rubyforge.org/heel/ on it and you will have a perfect light but very powerful wiki-like web site. Extension are perfect for programming notes including graphiz and syntax highlighting.
+
+h2. Setup your notebook
+
+<pre>
+sudo gem install webby
+</pre>
+
+This will install several gems, included heel.
+
+more coming...

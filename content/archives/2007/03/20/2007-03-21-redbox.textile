@@ -1,0 +1,67 @@
+---
+date: "2007-03-21T00:00:00Z"
+tags:
+- redbox
+- javascript
+- css
+- rails
+- howto
+title: Redbox, or a box overlay on rails
+---
+
+
+
+As linked in the last digest, the Craig Ambrose's "Redbox":http://www.craigambrose.com/projects/redbox is a Rails plugin inspired by "Thickbox":http://jquery.com/demo/thickbox/. It provides a way to show box overlaying your page.
+
+Example:
+
+<center>!http://www.rubynaut.net/files/2007-03-20_redbox_login.png (Redbox Login)!</center>
+
+Not fully documented, Iâ€™ll give you the way I have used it. Before starting, install the plugin:
+<pre>
+script/plugin install http://www.tinboxsoftware.com/plugins/show/redbox/
+</pre>
+
+
+First you need to verify your CSS and if, same me, your application not cover all the visible page of your navigator you should add the following in your CSS:
+<typo:code lang="css">
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+</pre>
+
+
+This code allows the overlay to cover all the page. Verify also you have the default javascript loaded and add Redbox CSS and javascript:
+<pre>
+<%= stylesheet_link_tag 'redbox' %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag 'redbox' %>
+</pre>
+
+
+Next you need to create hidden div for each box you need. The name of the div must follow the Redbox convention: hidden_content_<i>actionname</i>_<i>controllername</i>. The default style have to be <code>display: none;</code>.
+<typo:code lang="html">
+<div id="hidden_content_login_admin"
+ style="display: none;">
+</pre>
+
+
+Once you have put this code in your layout, you can activate your overlay with the following code (in my case it was a call to an action rendering a piece of html in return):
+<pre>
+<%= link_to_remote_redbox <i>'link text'</i>, :url => {:controller => <i>'controllername'</i>, :action => <i>'actionname'</i>} %>
+</pre>
+
+
+Thatâ€™s all, Redbox afford other ways to call box donâ€™t hesitate to look at the "demos":http://www.craigambrose.com/redbox_demo.
+
+When you install redbox, it copies css and javascript to the public folder. You can configure the CSS to modify the transparency of the overlay as you wish.
+
+Hope this article would be helpful
+
+ * "Redbox":http://www.craigambrose.com/projects/redbox

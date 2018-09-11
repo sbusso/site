@@ -1,0 +1,24 @@
+---
+date: "2006-09-03T00:00:00Z"
+tags:
+- ajax
+- rails
+- admin
+- web2.0
+- scaffold
+- builder
+title: Admin interface for Ruby on Rails
+---
+
+
+
+When choosing to develop with RoR instead of django, only one thing was missing : an admin interface. In django when you generate a project you have a small interface to manage your data. In Ruby on Rails you can use the magic scaffold but itâ€™s not very convenient.
+
+The first initiative I have discovered was <a href="http://www.ajaxscaffold.com/">ajax scaffold generator</a>, an advanced scaffold with some ajax stuff and a real way to integrate an admin interface, but you still have to do it.
+
+Then I found two other projects:
+
+    * <a href="http://code.trebex.net/auto-admin/">auto-admin</a> generating a django like interface
+    * <a href="http://www.ajaxscaffold.com/">streamlined</a> a more completed generator
+
+I let you play with these three different projects, for different using.

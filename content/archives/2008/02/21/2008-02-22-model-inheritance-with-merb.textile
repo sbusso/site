@@ -1,0 +1,34 @@
+---
+date: "2008-02-22T00:00:00Z"
+tags:
+- merb
+- ruby
+- datamapper
+- inherit
+- activerecord
+title: Model inheritance with Merb
+---
+
+
+
+_from help on irc#merb_
+
+I had recurrent issue about inherit a model class from another one in Merb, using ActiveRecord or DataMapper. As it's 'magicly' done on Rails I though the same way in Merb, but the last one load model class in alpha order. then what you have to do is to load the first class with a require:
+
+in your first file:
+
+<pre>
+class Page < ActiveRecord::Base
+end
+</pre>
+
+then in second add the require:
+
+<pre>
+require 'page'
+
+class ActivePage < Page
+end
+</pre>
+
+Simply using ruby...

@@ -1,0 +1,23 @@
+---
+date: "2006-09-03T00:00:00Z"
+tags:
+- typo
+- mysql
+title: Typo on mysql
+---
+
+
+
+The default installation is done with a sqlite database. After a corruption of this database I decided to migrate to mysql ... It was not a piece of cake.
+
+For those you want to use mysql u should install typo as following :
+
+   $ typo install <i>directory</i> database=mysql
+
+Then you will have the installation starting and ending with an error. But you have already a project created.
+
+Execute the db/schema.mysql.sql on your database.
+
+Modify the config/database.yml as you need and relaunch the install. Now the installtion go to the end, set up databse and start mongrel.
+
+That's all.

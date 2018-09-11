@@ -1,0 +1,85 @@
+---
+date: "2007-03-25T00:00:00Z"
+tags:
+- textmate
+- textile
+- blog
+title: 'How amazing is Textmate: a blog editor'
+---
+
+
+
+I'm sure many happy users of textmate know about its blog bundle. And many other don't know or haven't tried it before, TRY IT! It's great. How did it work for me?
+
+
+*First try*
+
+<div style="float:right;">
+!http://www.rubynaut.net/files/2007-03-20_textmate.png (Textmate)!
+</div>
+I was working on the previous post in this blog, and I started to be annoyed editing the post online (I know, there are tools...). Then I checked about Textmate to play with blog. I copied/pasted my content in textmate to edit the textile content (that's the stupid way...). After some modification I posted my changes. First, you need to configure your blog system:
+
+* Bundles > Blogging > Setup Blogs
+
+Edit the text and add your blog:
+
+__myblog__	http://__editor_name__@__myblog__.com
+
+Then post to your blog
+
+* Bundles > Blogging > Post to Blog
+
+As said it was my first view. But you can do much more...
+
+
+*Don't copy content, fetch it!*
+
+The first very useful feature is fetching. Once your blog configured in Textmate, you can ask to fetch your articles:
+
+Bundles > Blogging > Fetch Post
+
+Choose the article you want to work on, Textmate will create a new editing document including your content and some metadata (title, dates, etc...). Now you can modify it. Then just post your article back to your blog when finished. That's simple!
+
+
+*Create an article from scratch*
+
+As the article you are reading, you can create an article from scratch. Create a new docement from the template (here textile):
+
+File > New from template > Blogging > Blog Post (Textitle)
+
+Only the metadata title is showed by default, put here your title, and then add metadata you need:
+
+  * Bundles > Blogging > Headers >
+  ** blog
+  ** category
+  ** comments
+  ** date
+  ** keywords
+  ** ping
+  ** pings
+  ** tags
+  ** title
+
+or use the metadata name as _snippet_.
+
+
+*Add images*
+
+The most amazing in Textmate blogging, is the asset management. As example, just drag and drop a picture in your text, where you want to see it, Textmate uploads it to your server and inserts the code to display it in your text. Again, it s very simple and fast!
+
+
+*Preview*
+
+While you are editing your article you can see some of the format applied directly in your text (bold, italic, underline,..). If you want to see how will like your article before posting it (included the pictures!) use the preview feature:
+
+  * Bundles > Blogging > Preview
+
+
+*Conclusion*
+
+All these features are specifics to the blogging but of course all other useful Textmate things will help you: spelling, enclosure,... Then just try it !
+
+Some links:
+
+* "Textile reference":http://hobix.com/textile/
+* "Textmate":http://macromates.com/

@@ -1,0 +1,25 @@
+---
+date: "2007-10-16T00:00:00Z"
+tags:
+- rails
+- ruby
+- scrubyt
+- rubyinline
+title: Scrubyt on Rails
+---
+
+
+
+If like me you have an error after installing scrubyt 0.3.4 (in console and launching mongrel):
+
+<pre>
+can't activate RubyInline (= 3.6.3), already activated RubyInline-3.6.4]
+</pre>
+
+I spent a lot of time to find the solution, and so easy solution ... anyway could be useful for people googling about this. You just need to unsinstall the lastest installed version of RubyInline:
+
+<pre>
+sudo gem uninstall RubyInline -v 3.6.4
+</pre>
+
+Everything should be fine with this, even Scrubyt requiring version 3.6.3.

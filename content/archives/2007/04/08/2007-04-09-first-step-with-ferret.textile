@@ -1,0 +1,28 @@
+---
+date: "2007-04-09T00:00:00Z"
+tags:
+- rails
+- ferret
+- howto
+title: First step with Ferret
+---
+
+
+
+If you don't want to lost your time (_about 2 hours for me_), don't understand why your change in your model are not taking in account, and then understand there with a thread that's cannot be killed then block you model, _*create the ferret index at startup*_
+
+In your <code>environment.rb</code>:
+
+<typo:code lang="ruby">require 'ferret'
+include Ferret
+FERRET_INDEX = Index::Index.new(:path => FERRET_INDEX_DIR)
+</pre>
+
+With <code>FERRET_INDEX_DIR</code> is the path to your index directory and then you can use <code>FERRET_INDEX</code> whereever you want in your application. Later I will deal with how to initialize my index :p
+
+*Links for ferret*
+
+For those who don't know ferret, it's the inspired Lucene of ruby search engine, very powerful and fast:
+* "start here: trac":http://ferret.davebalmain.com/trac
+* "tutorial":http://ferret.davebalmain.com/api/files/TUTORIAL.html
+* "acts_as_ferret":http://projects.jkraemer.net/acts_as_ferret/

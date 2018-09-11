@@ -1,0 +1,25 @@
+---
+date: "2007-03-04T00:00:00Z"
+tags:
+- rails
+- digest
+- beast
+- forum
+title: Weekly Rails digest -  March 4, 2007
+---
+
+
+
+New objective for this blog: summarize the most interesting articles / products I found or rediscovered during my week of surf.
+
+For this week :
+<ul>
+<li><a href="http://www.simplelog.net">simplelog</a>: Not new for most of you but I really discover this new rails blog system, if you dont know it yet, I warmly invite you to check about it.</li>
+<li><a href="http://boxroom.rubyforge.org/index.html">boxroom</a>: I was looking for a tool to store my files online, I found one not so bad :-).</li>
+<li><a href="http://pastie.caboo.se/">pastie</a>: Simple, nice, just have a look and use to this web2.0 paste tool.</li>
+<li><a href="http://labs.parkerfox.co.uk/ruby.search/">ruby search</a>: An excellent tool for developers to find any detail about ruby and rails APIs.</li>
+<li><a href="http://labs.parkerfox.co.uk/ruby.search/">rb-appscript</a>: You have a Mac, know ruby and don't want to bother with Applescript, use this.</li>
+<li><a href="http://www.liverail.net/articles/2007/1/6/new-webdav-ruby-on-rails-plugin-release">railsdav</a>: still in the same way for sharing files, a start of plugin to use WebDAV over rails</li>
+<li><a href="http://beast.caboo.se/">beast</a>: A rails forum, stay tuned, version 1.0 should go out soon.
+
+</ul>

@@ -1,0 +1,18 @@
+---
+date: "2008-04-06T00:00:00Z"
+tags:
+- rails
+- ruby
+- routes
+- path
+- controller
+title: 'Rails: find controller for a path'
+---
+
+
+
+Huh, seems simple to do :p, but I've been seeking for a while to find the answer and dig into rails code to find a simple method to retrieve the controller of a given path (could be useful to build a navigation). There it is:
+
+<pre>
+ActionController::Routing::Routes.recognize_path(path)[:controller]
+</pre>

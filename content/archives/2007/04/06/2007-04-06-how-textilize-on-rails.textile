@@ -1,0 +1,18 @@
+---
+date: "2007-04-06T00:00:00Z"
+tags:
+- rails
+- textile
+- howto
+title: How to textilize on Rails
+---
+
+
+
+The last few days I found different solutions to use textile in Rails application. Let's have a look to the different ways.
+
+<h3>Requirement: RedCloth installation</h3>
+
+First you will need to install RedCloth (generally already needed to install Ruby and Gem)
+
+<pre>$ sudo gem install redcloth</pre>

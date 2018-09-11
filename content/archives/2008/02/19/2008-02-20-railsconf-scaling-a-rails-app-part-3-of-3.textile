@@ -1,0 +1,66 @@
+---
+date: "2008-02-20T00:00:00Z"
+tags:
+- railsconf
+- scaling
+- ruby
+- rails
+- proxy
+- frontend
+- nginx
+- apache
+- jruby
+- glassfish
+- mysql
+- haproxy
+- freebsd
+title: Scaling a Rails app (Part 3 of 3)
+---
+
+
+
+This the third and last part for a summary about solutions to help better computing of your rails app
+
+ * "1st part":http://www.rubynaut.net/articles/2007/10/10/scaling-a-rails-app-part-1-of-3.
+ * "2nd part":http://www.rubynaut.net/articles/2007/10/14/railsconf-scaling-a-rails-app-part-2-of-3.
+
+h4. Some home made benchmarks
+
+_NB: Following benchmarks have been made to a quick look study and not for a proof of concept._
+
+The test machine (dedibox, ubuntu 6.10) is 1 core cpu @2Ghz - 1024 Mo memory. In each case the http server uses 10 processes on a real world application (not just 'hello world!'). Sending 500 rq with 1 or 10 concurrency req:
+
+table{border:1px solid black; }.
+|_. conc. req. |_. 1 |_. 10 |
+| apache | | |
+| mongrel | 39.4s - 12.7 r/s | 21.9s - 22.8 r/s |
+| thin | 37.6s - 13.3 r/s | 17.7s - 28,15 r/s |
+| | | |
+| nginx | | |
+| mongrel | 39.2s - 12.8 r/s | 22.2s - 22.5 r/s |
+| thin 0.5.4 | 39.8s - 12.6 r/s | 17.7s - 28.15 r/s |
+| thin 0.6.1 socket x2 | 37.6s - 13.3 r/s |  17.8s - 28.1 r/s |
+
+<br/>
+
+Since last time, Rails world has a new nice app server: thin. Replacement of mongrel, based on rack interface, it's also recently added a unix socket connector where usually we use IP connector. For better performance, avoid longest stuff as scripts (google analytics). Other scripts/images/css are keys in http performances also, usage of "assets":http://weblog.rubyonrails.org/2007/9/30/rails-2-0-0-preview-release in recommended.
+
+As we can see in equivalent configuration there is no major difference for http server. Thin seems to be definitly faster than mongrel when you need to server more than 1 request at a time. And of course on a 1 core cpu, having more than one app server doesnt make the content served really faster.
+
+*Memory usage*
+
+Mongrel (48 Mo) -> Thin (40 Mo) less 15%
+
+Apache (10 Mo) -> Nginx (1.4 Mo) less 85%
+
+Finally I decided to move to a nginx / thin on socket configuration because of the memory usage and the fair performances. I even moved my PHP stuff with an fcgi connector.
+
+Other ideas of tests: Varnish, Nginx and memcached. Maybe next time :)
+
+[update]
+
+Please find a good benchmark about nginx vs apache on "Joe's blog":http://www.joeandmotorboat.com/2008/02/28/apache-vs-nginx-web-server-performance-deathmatch/
+
+h4. Overall conclusion
+
+I think when we need to compare two framework, about which one is faster, we should keep in mind all these levels of optimisation to scale an application, and then the raw performance is a secondary issue.

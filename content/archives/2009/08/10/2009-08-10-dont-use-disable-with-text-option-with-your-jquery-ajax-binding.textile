@@ -1,0 +1,17 @@
+---
+date: "2009-08-10T00:00:00Z"
+tags:
+- jquery
+- ajax
+title: Don't use "disable with text" option with your jquery ajax binding
+---
+
+
+
+I ve just spent 5 hours to understand what was going wrong with my ajaxy form. I use jquery on rails and ajaxForm plugin, I have some form already working good and tried to a new one.
+
+But this time it doesnt work, I dont understand why my form send twice the request, first with ajax header and second time with html request. I even tried to write raw javascrit, livequery and so on. Nothing make it works. Finally I want to check a little thing I add on the form: 'disable with text' option. I disabled it and miracle it works now.
+
+I ve lost 5 hour of my time for this little cosmetic tool that s mess up ajax binding.
+
+Then my advice: DON'T USE "DISABLE WITH TEXT" OPTION WITH YOUR JQUERY AJAX BINDING.

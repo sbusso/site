@@ -1,0 +1,30 @@
+---
+date: "2007-04-23T00:00:00Z"
+tags:
+- rails
+- radiant
+- extension
+title: A config manager for Radiant
+---
+
+
+
+For my training on Radiant I did a small extension to manage config parameters, usually accessible with the console or sql.
+
+installation:
+
+<pre>
+svn co http://www.rubynaut.net/svn/radiant/extensions/config_editor/ config_editor
+</pre>
+
+Done.
+
+I liked:
+
+* the api to add your admin controls
+* an asbtract model controller to help in managing your model's CRUD with only few lines.
+* the good practises you can get from the Radiant code :)
+
+Creating an extension with Radiant is so easy! I guess this system will become very popular, and it will give ideas to others :p. With this, Radiant become a very good base to create any kind of website.
+
+PS: the extension has now a tag <code><r:config key="key"/></code> to access a value inside your page.

@@ -1,0 +1,25 @@
+---
+date: "2007-03-19T00:00:00Z"
+tags:
+- rails
+- erubis
+- lightbox
+- scaffold
+- redbox
+- sitemeter
+- globalize
+title: Weekly Rails digest -  March 18, 2007
+---
+
+
+
+Ok, I should have done my home work last week end :). Let's have a look for what I have found these last few days :
+
+<ul>
+<li><a href="http://www.kuwata-lab.com/erubis/">erubis</a>: it's a VM for ruby written in ruby. Rails is supported in the latest version. Have also for java-er</li>
+<li><a href="http://activescaffold.com/">ActiveScaffold</a>: do you know about AjaxScaffold ? ActiveScaffold is the new version (v4) of this plugin. Don't need to generate controller anymore, every thing is in methods. </li>
+<li><a href="http://www.craigambrose.com/projects/redbox"</a>: if you are looking for some nice web2.0 features as the thickbox in your rails application look at this plugin. I will try to do an article soon about its use as it 's not fully documented</a></li>
+<li><a href="http://technoweenie.stikipad.com/plugins/show/Acts+as+Authenticated">acts_as_authenticated plugin</a>: great plugin for managing users and authentication. Has many other plugins use it for authorization by example. Excellent documentation on the wiki</li>
+<li><a href="http://sitemeter.rubyforge.org/">sitemeter</a>: another great plugin, easy to install, let's you have statistics on your rails application. Have a look.</li>
+<li><a href="http://wiki.globalize-rails.org/globalize/">globalize</a>: not yet tested, a plugin for i18nalize your application</li>
+</ul>

@@ -1,0 +1,31 @@
+---
+date: "2007-04-21T00:00:00Z"
+tags:
+- radiant
+- mephisto
+- typo
+- rails
+title: Why Radiant is better than Mephisto (and Typo) ?
+---
+
+
+
+I use Typo for my blog for some month now and before for other blogs. For its purpose of blogging it is a good tool, and written with Rails :). As Mephisto I think both inherit of the Rails' fashion. The past week I tried to implement inside Typo a small poll system I have developed in standalone application. I really got surprised by the complexity of Typo, and the lack of interface for extension, then I tried quickly its brother and it was maybe better, but so complex. We are far from the 20' blog's demo. These two blogs are made by great people knowing very well Rails then I guess the code is good and can handle every situation, but can't we do simpler ?
+
+*Radiant 0.6.0*
+
+Radiant 0.6.0 is going out today. Don't look at the version number (last stable was 0.5.2), this new version is a big change. I have tried it before but was not happy with the behavior system. Why add another concept to MVC? Why the basic content should be a page?
+
+In this new version the concept of behavior disappears, I let you check on the "website":http://radiantcms.org/ what is different. "Instead" there is a great extension system. You have an interface between radiant and extension to declare it (that is IMO a minimum to make a good system) and then you can access the Radiant API to easily extend it, by example, add a new tab in admin interface (try this in Typo ;) ).
+
+I like:
+* a clear and simple coding
+* a neat admin interface
+* a great extension system!
+
+I don't like:
+* the concept of Page, website is not only pages but many kind of contents as files, folders (or node). Even if extensions bring Assets, the top class should be Content instead of Page.
+* the single level of snippets and layouts (_only to complain about something :p_)
+
+*Link*
+* "RadiantCMS website":http://radiantcms.org/

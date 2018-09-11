@@ -1,0 +1,40 @@
+---
+date: "2007-09-20T00:00:00Z"
+tags:
+- ruby
+- rails
+- conference
+- scaling
+- security
+- capistrano
+- rspec
+- widgets
+- rails2.0
+title: (Ruby on) RailsConf Europe 2007
+---
+
+
+
+The conference has just finished, and the first thing to say "it's a must go conference for all of you developing with Rails". These 3 days were plenty of good information and teaching. You can read a lot of things on feeds or blogs, train yourself about every thing in Rails but nothing worth the real contact with the community. -500- 750 participants but only 2% of french people "mais ou est la communautÃ© francaise rails ?" and 95% of Mac users :D. Berlin is quite pretty city to visit, that's was a good _plus_ :).
+
+I will write a serie of posts about some interesting conferences I attended to :
+
+ * Scaling rails app
+ * Security (website)
+ * Capistrano 2.0 (you should use it)
+ * RSpec and its stories (good ideas, the best is coming)
+ * Tavnav and other italian widgets (DRY)
+ * Rails 2.0 RC (not a revolution, but many nice evolutions)
+
+and maybe another one about feedback of business creation around rails app.
+
+Other subjects I have watched but will not write about:
+
+ * Good practises (no big stuff)
+ * Ferret (previous post)
+ * Presenter concept (maybe a good idea but not convinced by the presentation)
+ * REST (already covered by many posts)
+
+I have been disappointed by one thing, there weren't any RadiantCMS talk :(.
+
+Link_to: "presentations and descriptions":http://www.railsconfeurope.com/pub/w/61/presentations.html

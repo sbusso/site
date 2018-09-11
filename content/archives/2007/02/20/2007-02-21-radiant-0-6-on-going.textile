@@ -1,0 +1,17 @@
+---
+date: "2007-02-21T00:00:00Z"
+tags:
+- rails
+- radiant
+- cms
+title: Radiant 0.6 on going
+---
+
+
+
+If you are insterested in CMS and Ruby On Rails, the project Radiant is going to publish a new version: 0.6.
+
+You can try it following the instructions :
+<a href="http://lists.radiantcms.org/pipermail/radiant/2007-February/003395.html">http://lists.radiantcms.org/pipermail/radiant/2007-February/003395.html</a>
+
+Please have a look as the upgrade of version number is far to relate the numerous changes in the project.

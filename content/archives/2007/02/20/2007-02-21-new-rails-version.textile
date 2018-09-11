@@ -1,0 +1,12 @@
+---
+date: "2007-02-21T00:00:00Z"
+tags:
+- rails
+title: New Rails version...
+---
+
+
+
+I know it s a bit late, but the version 1.2 of Ruby On Rails has finally got out on 18th of january.
+
+Have look <a href="http://www.rubyonrails.org/down">here...</a>

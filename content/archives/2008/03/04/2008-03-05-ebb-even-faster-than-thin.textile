@@ -1,0 +1,26 @@
+---
+date: "2008-03-05T00:00:00Z"
+tags:
+- ruby
+- thin
+- rails
+- server
+- ebb
+title: Ebb, even faster than Thin
+---
+
+
+
+"Ebb":http://ebb.rubyforge.org/ is new server to put in front of a rackable ruby application.
+
+Have a look to the "Ebb website":http://ebb.rubyforge.org/ to get some comparison with other app servers.
+
+<pre>
+sudo gem install ebb
+</pre>
+
+What I needed to do before on Mac OS X (leopard with MacPorts):
+
+<pre>
+sudo port install glib2
+</pre>

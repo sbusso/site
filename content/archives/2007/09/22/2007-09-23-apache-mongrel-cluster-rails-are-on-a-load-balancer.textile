@@ -1,0 +1,59 @@
+---
+date: "2007-09-23T00:00:00Z"
+tags:
+- ruby
+- rails
+- scaling
+- apache
+- mongrel
+- cluster
+- load_balancer
+- debian
+- nginx
+- freebsd
+title: Apache, Mongrel (cluster) and Rails are on a load balancer
+---
+
+
+
+Following the conference, and some information about scaling Rails application, I decided to investigate about it and write a post on it.
+
+First, I tried to install FreeBSD as recommended for small configuration... Well, I still don't get it, I'm not fan of this installation and stop trying to understand, instead I installed a Debian 4.0R1, not so bad and closer to what I know :)
+
+Secondly, I want to try Nginx. First, need to find the good one to install on Debian, not last dev, maybe the one on the testing repository. Finally I found package with the 0.5.31, latest stable version. Easy to install with dpkg, I only wanted to simply configure static server and point on php application I have. Ouch, the php-cgi stuff is pretty much more complicated than expected, I -had a look to a Rails configuration and- gave up :p.(update: configuration of one server is not so complicated, at least for rails, not more than load_balancer in apache, but it is for php and if you want to dispatch URL on the same domain, it doenst seem trivial)
+
+Then I went back to something I can handle: apache. I have read some article about 2.2 you can use with load_balancer and several mongrel instances. Let's go for it. I found a very complete article: "Time For A Grown-Up Server: Rails, Mongrel, Apache, Capistrano and You":http://blog.codahale.com/2006/06/19/time-for-a-grown-up-server-rails-mongrel-apache-capistrano-and-you/ used also by mongrel website about "Apache Best Practice Deployment":http://mongrel.rubyforge.org/docs/apache.html.
+
+As I faced some issues, please be careful about the following:
+
+1/ Mods to activate:
+
+<pre>
+a2enmod proxy
+a2enmod proxy_http
+a2enmod rewrite
+a2enmod deflate
+a2enmod headers
+a2enmod cache
+a2enmod mem_cache
+a2enmod file_cache
+</pre>
+
+2/ Forbidden access ?
+If you have some issue with forbidden access please check your proxy conf file and replace
+
+<pre>
+Order deny,allow
+Deny from all
+</pre>
+
+by
+
+<pre>
+Order allow,deny
+Allow from all
+</pre>
+
+Enjoy!
+
+I'll try again "Nginx":http://nginx.net/ and maybe also pen / pound and "litespeed":http://litespeedtech.com/. A buzzy load balancer: "HAProxy":http://haproxy.1wt.eu/. A lot of work is coming :p. If you have some feedback about these configuration don't hesitate to share it :)

@@ -1,0 +1,35 @@
+---
+date: "2006-09-24T00:00:00Z"
+tags:
+- rails
+- zope
+- advanced
+- builder
+title: Advanced Ruby on Rails
+---
+
+
+
+<h2> Ruby on Rails Backend </h2>
+
+Have you ever though to have quicker site setting up with Ruby on Rails ? Each time I want to start a project I do design first same things: a backend.
+
+    * Manage your data
+    * Authentification system
+
+And for all that you need of course a nice layout. Do you know something can do that out of the box ? let me know, untill I find this I will try to make something like that.
+
+<h2> Zope on Rails</h2>
+
+To go further, you can add some good stuff like :
+
+    *  Workflow / machine state system
+    * A mini CMS with a flexible content with inline editor
+    * Indexing engine, tag system
+    * Navigation
+    * Cache
+    * eCommerce system with checkout and payment system
+    * Upload system / File system Handler
+    * Widgets
+
+Most of these features exist. Then It s possible to have an extended framework with Ruby on Rails, just have to be done.

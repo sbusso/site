@@ -1,0 +1,60 @@
+---
+date: "2008-02-18T00:00:00Z"
+tags:
+- ruby
+- merb
+- radiant
+title: Radiant to Merb
+---
+
+
+
+Merb is a (future) great framework. Radiant is good CMS. And they have so much in common. I'm curious about porting Radiant to Merb then I started the challenge. For people interested in the same challenge, I set up a "repository":http://gitorious.org/projects/merb_radiant. Then please feel free to participate.
+
+[update]
+
+I got invited on github then I cloned the git repository to "http://github.com/sbusso/merb_radiant/tree/master":http://github.com/sbusso/merb_radiant/tree/master
+
+h3. Action plan:
+
+Merb is a framework equivalent to Action Pack. It can use Active Record. For generator we can use Rubigen, it s an extract of RailsGenerator.
+
+For this we will use:
+
+ * Radiant trunk r742
+ * Merb (core and more) 0.9.0
+ * Merb helpers 0.9.0
+ * Merb ActiveRecord 0.9.0
+ * ActiveRecord 2.0.2
+ * Rubigen 1.2.0
+
+The repository tree was build with:
+
+ * Hoe (modified) generated skeleton
+ * Merb application
+ * Radiant source
+
+h4. 1. Move Radiant base:
+
+ * use plugins as gem:
+
+	* radius 0.5.1
+	* highline 1.4.0
+	* rubypants 0.2.0
+ * use other plugins as ruby libraries:
+
+ 	* redcloth
+	* bluecloth
+ * using active record: nothing to do
+ * radius and other ruby libs: nothing to do
+ * replace RailsGenerator with Rubigen (Radiant bin)
+ * work on initializer
+ * desactivate extension dependencies (first step we move only the base)
+ * manage Controller and libraries using controllers
+ * check routes management
+ * work on views to replace Rails specific code
+
+h4. 2. Replace extension system with gems:
+
+ * first, activate gem with only code features
+ * second, deal with extension providing assets

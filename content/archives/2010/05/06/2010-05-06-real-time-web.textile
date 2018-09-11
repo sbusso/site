@@ -1,0 +1,53 @@
+---
+date: "2010-05-06T00:00:00Z"
+tags:
+- node.js
+- pubsub
+- comet
+title: Real Time Web
+---
+
+
+
+UPDATE 30/03/2011: this article was started as a draft last year and unfortunatly published as is. As things changing quite fast in this part of the web, I update this article to keep only references to technologies. I m sure there a lot of more today.
+
+For the website "Pronostic Facile":http://www.pronostic-facile.fr I m looking for technologies to provide real time information. I receive information of different kinds and want to dispatch it to users as soon as possible and make it available without the user reloading the page. This can be provided by a "Pubsub":http://en.wikipedia.org/wiki/Publish/subscribe architecture with a "Comet":http://en.wikipedia.org/wiki/Comet_(programming) layer.
+
+h3. Node.js
+
+"Node.js":http://nodejs.org/ is the server technology build for this job. Scalable, asynchronous, it can handle a lot of requests as to receive and publish messages.
+
+h4. Faye
+
+pubsub over http for node.js and rack, "Faye":https://github.com/jcoglan/faye
+
+h4. Nodule
+
+a pubsub Key-value store, "Nodule":https://github.com/chriskite/nodule
+
+h4. Fanout.js
+
+bq. I needed a robust and scalable event-driven message fanout server for several Comet-based webapps where some process in the backend could send various messages of different types/channels to the clients (browsers) in the front-end. fanout.js implements such a server using standard TCP sockets so that it can be used in a wide variety of applications. Connection to web browsers is accomplished by using the TCPSocket abstraction in the Orbited.org project.
+
+a simple and robust fanout pubsub messaging server for node.js, "Fanout.js":https://github.com/jazzychad/fanout.node.js
+
+h4. Nodered
+
+bq. NodeRed is an extensible network service container for Node.js
+
+"Nordered":https://github.com/fictorial/nodered
+
+h4. Express
+
+Not really build for Pubsub, it s a good base to build a service on node.js. This framework try to bring to node.js all the power of other framework like rails and make development fast.
+
+"Express":https://github.com/visionmedia/express
+
+h4. Socket.io
+
+A nice piece of software giving you server and client abstraction of <i>sockets</i> over technology and browser.
+
+"Socket.io client":https://github.com/LearnBoost/Socket.IO
+"Socket.io node.js server":https://github.com/LearnBoost/Socket.IO-node
+
+I did look at XMPP and APE, but this solution is far simpler and is the new technology for real time application.

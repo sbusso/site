@@ -1,0 +1,16 @@
+---
+date: "2007-04-21T00:00:00Z"
+tags:
+- google
+title: Google Notebook, Try it!
+---
+
+
+
+*Yet another Google tool*
+
+I've just discovered about the notebook tool in google. Why I didn't know this earlier? it's exactly what I need to grab and store information from Internet, with the firefox extension you can clip, comment what ever page you want. I know about Clip it! or other page grabber but this one is just _simple_, and well integrated.
+
+A very good tool to share your clips from a computer to another, try it !
+
+"google notebook":http://www.google.com/notebook/

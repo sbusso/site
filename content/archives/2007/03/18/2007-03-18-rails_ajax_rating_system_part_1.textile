@@ -1,0 +1,76 @@
+---
+date: "2007-03-18T00:00:00Z"
+tags:
+- plugin
+- ajax
+- rails
+- rating
+- howto
+title: Rails Ajax rating system (Part 1)
+---
+
+
+
+Needed for a little project, I found a plugin: "acts_as_rated".
+
+<blockquote>
+"Adds rating capabilities to any ActiveRecord object.
+It has the ability to work with objects that have or don't special fields to keep a tally of the
+ratings and number of votes for each object.
+In addition it will by default use the User model as the rater object and keep the ratings per-user.
+It can be configured to use another class, or not use a rater at all, just keeping a global rating"</blockquote>
+
+Not yet released as gem please checkout the following trunk :
+<a href="svn://rubyforge.org/var/svn/acts-as-rated/trunk/acts_as_rated"> svn://rubyforge.org/var/svn/acts-as-rated/trunk/acts_as_rated</a>
+
+<b>Installation:</b>
+
+<pre>
+script/plugin install svn://rubyforge.org/var/svn/acts-as-rated/trunk/acts_as_rated
+</pre>
+
+<b>Generate the Rating model:</b>
+
+The rater is <i>User</i> (by default) and rated object is <i>Photo</i>
+
+<pre>
+script/generate migration add_rating
+</pre>
+
+<typo:code lang="ruby" title="migration/01_add_rating.rb">
+class AddRating < ActiveRecord::Migration
+
+    def self.up
+      ActiveRecord::Base.create_ratings_table
+      Photo.add_ratings_columns
+    end
+
+    def self.down
+      # Remove the added columns
+      Photo.remove_ratings_columns
+      ActiveRecord::Base.drop_ratings_table
+    end
+
+  end
+</pre>
+
+<pre>
+rake db:migrate
+</pre>
+
+Add table <i>ratings</i> and columns <i>rating_count, rating_total, rating_avg</i> to the Photos table.
+
+<b>Usage:</b>
+
+<typo:code lang="ruby">
+class Photo < ActiveRecord::Base
+  acts_as_rated :rating_range => 0..5
+end
+
+stephane = User.find_by_username("stephane")
+picture = Photo.new("beautiful picture")
+picture.rate 4, stephane
+</pre>
+
+that's all for now ...
+(Next: integrate CSS rating interface)

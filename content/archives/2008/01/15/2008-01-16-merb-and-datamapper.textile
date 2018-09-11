@@ -1,0 +1,11 @@
+---
+date: "2008-01-16T00:00:00Z"
+tags: []
+title: Merb and Datamapper
+---
+
+
+
+$ PATH=/usr/local/mysql/bin:$PATH sudo gem install do_mysql
+
+sudo gem install do_postgres -- --with-pgsql-dir=/Library/PostgreSQL8/

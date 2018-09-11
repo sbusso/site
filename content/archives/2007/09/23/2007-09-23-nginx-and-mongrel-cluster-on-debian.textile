@@ -1,0 +1,96 @@
+---
+date: "2007-09-23T00:00:00Z"
+tags:
+- nginx
+- debian
+- mongrel
+- cluster
+- ruby
+- rails
+- configuration
+- load_balancer
+title: Nginx and Mongrel cluster on debian
+---
+
+
+
+Nginx is a 'small' efficient http, load balancer server. More and more popular in Rails community, it's a good front end for mongrel clusters. It's seems to be a good replacement for apache, at least for the memory usage (on my test: 1 process use 1.3M against the more than 9M taken by 1 apache process). Benchmark on one single server are quite similar.
+
+The process has been tested on debian 4.0r1 and should work on Ubuntu.
+
+h3. Installation
+
+<pre>
+apt-get install nginx
+</pre>
+
+or, if you want an up to date product:
+
+1/ Prepare your system
+
+<pre>
+apt-get install zlib1g-dev libgcrypt11-dev libpcre3-dev libssl-dev
+</pre>
+
+2/ "Download source":http://sysoev.ru/nginx/download.html
+
+<pre>
+tar xzf nginx-0.6.12.tar.gz
+cd nginx-0.6.12
+</pre>
+
+3/ Compile it
+
+<pre>
+./configure --pid-path=/usr/local/nginx/logs/nginx.pid \
+	--sbin-path=/usr/local/sbin/nginx \
+	--with-md5=/usr/lib \
+	--with-sha1=/usr/lib \
+	--with-http_ssl_module \
+	--with-http_dav_module --prefix=/usr \
+    --conf-path=/etc/nginx/nginx.conf \
+    --pid-path=/var/run/nginx.pid \
+    --lock-path=/var/run/nginx.lock \
+    --error-log-path=/var/log/nginx/error.log \
+    --http-log-path=/var/log/nginx/access.log
+
+make
+
+sudo make install
+</pre>
+
+h3. Configuration
+
+The following configuration is for 1 nginx server with load balancing 3 mongrel in cluster:
+
+1/ Mongrel cluster configuration
+
+<pre>
+gem install mongrel_cluster -y
+
+cd /var/www/my-app-path/current/
+</pre>
+
+configures 3 mongrel in cluster, in production mode, starting at port 5000 and listening on localhost
+
+<pre>
+sudo mongrel_rails cluster::configure -e production \
+    -p 5000 -N 3 -c /var/www/my-app-path/current/ -a 127.0.0.1 \
+	--user www-data
+
+mongrel_rails cluster::start
+</pre>
+
+2/ Nginx
+
+<pre>
+nano /etc/nginx.conf
+</pre>
+
+Use the "nginx.conf":http://brainspl.at/nginx.conf.txt file from "brainspl.at":http://brainspl.at/ website, change the 2 or 4 (if you use ssl) references to the path of your application (/var/www/my-app-path/current/)
+
+<pre>
+/etc/init.d/nginx start
+</pre>
+
+All these information come from many website (thanks to all), I put them together for my own usage, hope it's helpfull.

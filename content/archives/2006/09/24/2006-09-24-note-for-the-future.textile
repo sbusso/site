@@ -1,0 +1,15 @@
+---
+date: "2006-09-24T00:00:00Z"
+tags: []
+title: Note for the future :)
+---
+
+
+
+Autoload Support for Models in Subdirectories Removed
+
+The auto loading path which make models in subdirectories of app/models load in Rails has been removed from the lastest trunk. If you are using models in subdirectories of the app/models path, you will now need to add this in your environment.rb:
+
+ $ config.autoload_paths += Dir[RAILS_ROOT + '/app/models/*/']
+
+This won't affect most users, but if you've organized your models into subdirectories similar to the convention used for namespaces controllers, then you will want to update your applications before you move to 1.2.

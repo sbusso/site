@@ -1,0 +1,27 @@
+---
+date: "2007-07-27T00:00:00Z"
+tags:
+- ruby
+- mechanize
+- scrubyt
+- openssl
+title: Ruby and OpenSSL on Ubuntu
+---
+
+
+
+If you try to use scrubyt or mechanize on ubuntu you could get some error like:
+
+<code>no such file to load -- openssl</code>
+
+After having installed Opensll via apt-get you will also need *libssl_dev*.
+
+<code>sudo apt-get openssl libssl-dev</code>
+
+Then now go to the ruby source folder, and in openssl extension folder: /.../ruby1.8/ext/openssl
+
+<code><pre>ruby extconf.rb
+make
+sudo make install</pre></code>
+
+check your installation with <code>ruby -rubygems -e "require 'mechanize'"</code>

@@ -1,0 +1,75 @@
+---
+date: "2007-10-14T00:00:00Z"
+tags:
+- railsconf
+- scaling
+- ruby
+- rails
+- proxy
+- frontend
+- nginx
+- apache
+- jruby
+- glassfish
+- mysql
+- haproxy
+- freebsd
+title: Scaling a Rails app (Part 2 of 3)
+---
+
+
+
+This the second part for a summary about solutions to help better computing of your rails app ("1st part":http://www.rubynaut.net/articles/2007/10/10/scaling-a-rails-app-part-1-of-3).
+
+h4. Application
+
+To help your application to focus on replying fast to user, you can use a *distributed queueing* to give the job to other processes:
+
+ * "Daemons":http://daemons.rubyforge.org/
+ * "Backgroundrb":http://backgroundrb.rubyforge.org/
+
+And second thing, you can *cache* things you don't need to compute for each request, this can incredibly increase the response of your server, but need to modify your code and it s recommend for very big sites:
+
+ * "Memcache client":http://seattlerb.org/memcache-client, "memcached server":http://www.danga.com/memcached/
+ * "acts_as_cached":http://errtheblog.com/post/27
+
+h4. Back end
+
+h5. DB
+
+For your database you can find some *sql proxy*, but I haven't tried it yet. You have also the way to *replicate* your databse and serve data from several servers.
+
+ * "sql relay":http://sqlrelay.sourceforge.net/
+ * use jruby with a jdbc pool connection and caching
+
+Important things you have to check about your databse is if you have the right indexed fields. You should find some tools on mysql helping you to find where *indexes* missing. Check about *cache* too.
+
+A last way is to *serialize* some of your data in a single object.
+
+h5. Mysql
+
+Otherwise you can configure your mysql with some optimized *configuration* (mysql.ini):
+
+ * skip-name-resolve
+ * query_cache_size = 52428800;
+ * query_cache_type = 1
+
+And in your ActiveRecord object you can use the *:include* parameter.
+
+h5. Filesystem
+
+Optimizing the filesystem, in other sense than choose a good OS, can been done with not overloading the management of files by using some *rules*:
+
+ * max 10K files / subdir
+ * 16 top level / 256 sub / 10K per sub dir
+ * use a hasher to manage files
+
+h4. OS
+
+As we have seen, file and memory management are keys of good performances. And these are managed by OS. The two best OSs mentionned are
+
+ * Sunsolaris
+ * FreeBSD (can be use for a all in one stack), avoid the version 5
+
+
+_And upcoming, last part of this article, some home made benchmarks for my own purpose._

@@ -1,0 +1,22 @@
+---
+date: "2007-03-25T00:00:00Z"
+tags:
+- geokit
+- gooby
+- google
+- api
+- ruby
+- gtd
+title: Weekly Rails Digest - March 25, 2007
+---
+
+
+
+Not a big digging week, at least some nice links:
+
+* "Geokit":http://geokit.rubyforge.org/: a Rails plugin for building location-based apps.
+* "Gooby":http://rubyforge.org/projects/gooby/: a ruby interface to the google api, now version 1.
+* "Ruby 1.8.6":http://www.ruby-lang.org/en/news/2007/03/12/ruby-1-8-6-released/: no comment, just for those who didn't know :).
+* "WhatALi.st":http://whatali.st/: GTD website or how to share and work all together on list, whatever list.
+
+For this week, that's all folks.

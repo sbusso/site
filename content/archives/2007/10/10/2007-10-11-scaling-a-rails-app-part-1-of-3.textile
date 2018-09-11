@@ -1,0 +1,75 @@
+---
+date: "2007-10-11T00:00:00Z"
+tags:
+- railsconf
+- scaling
+- ruby
+- rails
+- proxy
+- frontend
+- nginx
+- apache
+- jruby
+- glassfish
+title: Scaling a Rails app (Part 1 of 3)
+---
+
+
+
+One of the most interesting topic in the RailsConf was _Scaling your Rails app_. There are 2 ways of doing it:
+
+ * adapt your code
+ * adapt your servers
+
+But the second one will not help to make your code faster. It will just help to give maximum resources to compute it right.
+
+Summaries from the conference (_sorry for the so few litterature it will be only a summarize_):
+
+h3. Some theories
+
+These theories are for big websites with millions of hits every month. This can involve thousand of servers, different location, ... BTW some tips can be use to help smaller configurations.
+
+The 7 layers to be considered, _a la OSI_.
+
+ * DNS
+ * frontend
+ * proxy
+ * application server
+ * application
+ * backend (Db , filesystem)
+ * OS
+
+h4. DNS
+
+Nice website to check your DNS configuration: "dnsstuff.com":http://www.dnsstuff.com/
+Good tool to optimize your DNS: speed, dispatching, and so on...: "powerdns":http://www.powerdns.com/
+
+DNS can be quite fast to address the right server from a request, scripts allow to manage complex configurations. The tip is to use 1 DNS entry per 1 controller, then managing part of the routing.
+
+h4. Frontend and Proxy
+
+Load balancing is about dispatching requests taking in account the charge of each cluster.
+
+Load balancers:
+	"Varnish":http://varnish.projects.linpro.no/
+	"HAProxy":http://haproxy.1wt.eu/
+
+Both look promising and HAProxy seems to be more and more popular.
+
+Front end with load balancer:
+	"Nginx":http://wiki.codemongers.com/Main : fast, low memory usage, http server with load balancing, easy configuration, very good in front of mongrel cluster.
+	Apache 2.2 + mod_proxy_balancer, you can find how to setup it in previous post: "apapche, mongrel cluster, rails on a load balancer":http://www.rubynaut.net/articles/2007/09/22/apache-mongrel-cluster-rails-are-on-a-load-balancer
+
+h4. Application server
+
+ * mongrel server: enough for a personnal server
+			gem install mongrel
+			mongrel_rails start ("more information":http://mongrel.rubyforge.org/docs/)
+ * mongrel_cluster: useful to scale up your configuration, need at least a multi-processor or multi server environnment.
+			gem install mongrel_cluster
+			mongrel_rails cluster::configure ...
+			mongrel_rails cluster::start
+ * Evented Mongrel ("swiftiply":http://swiftiply.swiftcore.org/): it's a mongrel based an event triggering
+ * jruby / glassfish: the technology java comes with some good environment to speed up part of your application like connection to database (jdbc, pool connection)
+
+_to be continued (application, backend, OS, and some home benchmark)_

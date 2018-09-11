@@ -1,0 +1,16 @@
+---
+date: "2012-10-09T00:00:00Z"
+description: Monitoring presentation by Jason Dixon
+tags:
+- monitoring
+title: The state of open source monitoring
+---
+
+
+
+
+To follow the post on monitoring here is a presentation "The state of open source monitoring" by Jason Dixon at the last DevOpsDays:
+
+<script async class="speakerdeck-embed" data-id="506ed72c4f4e12000207cc4c" data-ratio="1.3145057766367136" src="//speakerdeck.com/assets/embed.js">
+</script>
+

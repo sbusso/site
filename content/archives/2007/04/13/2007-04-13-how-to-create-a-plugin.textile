@@ -1,0 +1,14 @@
+---
+date: "2007-04-13T00:00:00Z"
+tags:
+- rails
+- plugin
+- initialization
+- controller
+- howto
+title: How to create a plugin
+---
+
+
+
+Create a plugin on rails is the best way to share a features or a code between applications and with others. I found a lot information about how to extend or mixin ActiveRecord, but no information about how to provide a piece of application. Maybe I do wrong but that's how I did:

@@ -1,0 +1,20 @@
+---
+date: "2010-03-30T00:00:00Z"
+tags:
+- webby
+- typo
+title: 'From Typo to Webby: Completed'
+---
+
+
+
+The move was longer than expected but it s now done, and my former typo blog has been moved to static "Webby":http://webby.rubyforge.org/ website. Here are the elements I used to migrate:
+* posts: "migrate_content_to_webby.rb":http://gist.github.com/348230
+* comments to discuss: "export_comments.rb":http://gist.github.com/347114
+* using gist to embeded code and syntax color: "gist.github.com":http://gist.github.com
+* tags system improved from "http://aaronqian.com/":http://aaronqian.com/
+* ping from "avdgaag":http://github.com/avdgaag/arjanvandergaag.nl/blob/28539bc736a05b28f2aa4ef81e4f61f3f91375a0/Rakefile
+
+That's about all you will need to start a blog. Later I will work on some tasks to publish best posts to twitter or rubycorner.
+
+should be available soon on gihub...

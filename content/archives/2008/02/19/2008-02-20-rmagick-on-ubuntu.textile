@@ -1,0 +1,21 @@
+---
+date: "2008-02-20T00:00:00Z"
+tags:
+- ruby
+- rmagick
+title: Rmagick on Ubuntu
+---
+
+
+
+I found other libraries as librmagick but it seems to have better solution:
+
+%pre
+  \# libmagick9-dev ?
+  sudo apt-get install libmagick++9-dev ruby1.8-dev
+  wget ftp://ftp.fu-berlin.de/unix/X11/graphics/ImageMagick/ImageMagick-6.3.8-9.tar.gz
+  tar xzf
+  \./configure --prefix=/usr
+  make
+  sudo make install
+  sudo gem install rmagick

@@ -1,0 +1,32 @@
+---
+date: "2008-02-15T00:00:00Z"
+tags:
+- merb
+- ruby
+title: Merb 0.9.0 - only for developer
+---
+
+
+
+Following the next version of Merb, I'm a bit surprised by the way this new version came out:
+
+"Merb 0.9.0":http://gweezlebur.com/2008/2/14/merb-0-9-0-released-kinda
+
+Help of developers is needed for going on 1.0, then install it and try it.
+
+Included :
+
+ * merb-core
+ * merb-action-args
+ * merb-assets
+ * merb-gen
+ * merb-haml
+ * merb-mailer
+ * merb-parts
+ * merb-more
+ * merb
+
+then
+<pre>
+merb-gen myapp
+</pre>

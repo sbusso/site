@@ -1,0 +1,15 @@
+---
+date: "2007-04-15T00:00:00Z"
+tags:
+- typo
+- sidebar
+- plugin
+- rails
+title: Poll sidebar for Typo
+---
+
+
+
+First (and last?) sidebar I've made for Typo: a poll system. The code it's at its early development but works. I started by a plugin, I found almost what I need then I wanted to integrate it to my Typo blog... It was more difficult to integrate this piece of code than to type it. And sadly I discovered that Typo is not really good to be extended, at least since you want more interaction between your sidebar with user than from a static page.
+
+"Poll sidebar":http://www.rubynaut.net/svn/plugins/poll_sidebar/trunk

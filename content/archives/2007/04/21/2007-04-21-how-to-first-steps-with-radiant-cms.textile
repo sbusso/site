@@ -1,0 +1,14 @@
+---
+date: "2007-04-21T00:00:00Z"
+tags:
+- radiant
+- howto
+- rails
+title: 'How to: First steps with Radiant CMS'
+---
+
+
+
+As I'm new in Radiant I will not explain every thing I don't know about it, only the few first steps to create your pages. If you want more information please refer to the links at the bottom of the page.
+
+please follow the "guide":http://www.rubynaut.net/pages/radiant-first-steps

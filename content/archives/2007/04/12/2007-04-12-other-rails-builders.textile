@@ -1,0 +1,34 @@
+---
+date: "2007-04-12T00:00:00Z"
+tags:
+- rails
+- builder
+- goldberg
+title: Other Rails builders...
+---
+
+
+
+<h3>Goldberg</h3>
+
+To continue the topic of "builders":http://www.rubynaut.net/articles/tag/builder, here we have a web site generator, including user authentication, security, and site navigation, provided by a gem:
+
+<pre>$ sudo gem install goldberg_generator -y
+$ rails _website_name_
+$ cd _website_name_
+$ script/generator goldberg _template_</pre>
+
+where <code>_template_</code> is one of the following template:
+* default
+* ewnf
+* snooker
+* spoiled_brat
+configure _config/database.yml_ then
+
+<pre>$ rake goldberg:install</pre>
+
+One interesting thing is the possible use of FCKeditor.
+
+*Links*
+
+* "Goldberg":http://goldberg.240gl.org/

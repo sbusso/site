@@ -1,0 +1,47 @@
+---
+date: "2008-06-01T00:00:00Z"
+tags:
+- rails
+- ruby
+- database
+- connection
+- abstract
+title: How to access multiple databases with rails
+---
+
+
+
+I know it exists other information about this, but I want to summarize here the practise I use in several project now. It takes 4 steps:
+
+ * configure your database.yml
+ * create an abstract class for connection
+ * create new models within a module
+ * interact the 2 databases
+
+h3. 1. Configure your database.yml
+
+This is the same as you create production or development connection, just give it a specific name:
+
+<script src="http://gist.github.com/344645.js?file=database.yml"></script>
+
+h3. 2. Create an abstract class for connection
+
+Then create an abstract class you will inheritate by your new classes:
+
+<script src="http://gist.github.com/344645.js?file=external.rb"></script>
+
+h3. 3. Create new models within a module
+
+To make it easier to use and cleaner, create a subfolder <i>OtherDatabase</i> and then create in this folder your new classes (for each table you need) as following:
+
+<script src="http://gist.github.com/344645.js?file=model.rb"></script>
+
+h3. 4. How to interact the 2 databases
+
+Once you have created your new classes, you can simply access it using the module prefix:
+
+<script src="http://gist.github.com/344645.js?file=code.rb"></script>
+
+h3. Conclusion
+
+That's all, submodule is not really necessary but keeps your model folder cleaner. Any suggestion to improve this practice ?

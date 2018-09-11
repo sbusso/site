@@ -1,0 +1,44 @@
+---
+date: "2010-03-23T00:00:00Z"
+tags:
+- provision
+- deployment
+- rails
+title: Provision for the poor man's server
+---
+
+
+
+For some weeks now, one of my website has started to be heavy loaded and needs to move to a new home. Iy cost me 2 hard days last time to install the server, It's boring to plan it again. Also I start to think about what could happen if the server crashes and if I need 2 days (less because I have written down the procedure) to get a new slice up. Here start my journey to find a simple solution to automate this deployment from scratch OS to a full running rails stack.
+
+h3. Common solution for big guys
+
+* "chef":http://wiki.opscode.com/display/chef/Home: used or promoted by _EY_ and _37s'_ it s the most popular, ruby syntax, quite Ubuntu oriented
+* "puppet":http://projects.reductivelabs.com/projects/puppet/wiki: written in ruby, has it s own DSL, more open to other systems
+* "moonshine":http://wiki.github.com/railsmachine/moonshine/ combine the best of the two worlds with a ruby DSL, but sadly it s opinionated and not easy to find recipes or to build recipes if you choose another road (example: nginx).
+
+Currently using FreeBSD, I'd like to keep this config, that doesn't seem to be an option in these solutions. Also they require a server to dispatch configurations as they are build for provisioning clusters and clouds solutions (chef supports a solo version).
+
+to mention: puppetshadow, the DSL extracted from moonshine to use on puppet
+
+Then I dug further to find some solution for the poor man's server.
+
+h3. Capistrano
+
+Since the beginning I feel like capistrano could do this job. I use it a lot to remote administrate and deploy application, then why not for setting up my server. And then i started to find some products doing it:
+
+* carpet: still alive ?
+* "sprinkles":http://github.com/crafterm/sprinkle with the "passenger-stack":http://benschwarz.github.com/passenger-stack/
+* "deprec":http://github.com/mbailey/deprec, old friend I'd like to see the evolution
+
+Then I will try those 2 and give feed back later on.
+
+h3. Mixin
+
+To mention also, initiatives built on sprinkles to start working with chef:
+* "chef bootstrap":http://github.com/martincik/chef-bootstrap : to setup a chef client server
+* "sprinkle_chef":http://github.com/mikehale/sprinkle_chef/ same same but different
+
+Take a look to solution as vagrant to setup a full VM stack with rails, quite useful for development and ensure every developer use the same environment. You can also build your own _box_.
+
+If you know any other solution that can fit in this post (ruby, one server deployment, etc...), leave a comment.

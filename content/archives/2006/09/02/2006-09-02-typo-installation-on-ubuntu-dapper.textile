@@ -1,0 +1,62 @@
+---
+date: "2006-09-02T00:00:00Z"
+tags:
+- rails
+- typo
+- ubuntu
+- sqlite
+- gem
+title: Typo installation on Ubuntu Dapper
+---
+
+
+
+I have currently an ubuntu dapper running ruby, rails and gem.
+
+As gem will need to compile some stuff you should do :
+
+	$ apt-get install build-essential
+
+Then at first try I had an error :
+
+	Building native extensions.  This could take a while...
+	extconf.rb:1:in `require': no such file to load -- mkmf (LoadError)
+        from extconf.rb:1
+	ERROR:  While executing gem ... (RuntimeError)
+	ERROR: Failed to build gem native extension.
+
+I found my ruby installation was not complete, then you shall install following packages :
+
+	$ apt-get install ruby1.8-dev ruby1.8 ri1.8 rdoc1.8 irb1.8 /
+	libreadline-ruby1.8 libruby1.8
+
+Installation of typo also needs sqlite3 (you will see, by default the installer creates a database and launchs mongrel)
+
+	$ apt-get install libsqlite3-0
+	$ apt-get install libsqlite3-dev
+	$ apt-get install sqlite3
+
+Install the ruby sqlite debian packages.
+
+	$ apt-get install swig
+	$ apt-get install libsqlite3-ruby
+
+Now it should work fine :)
+
+	$ sudo gem install typo --include-dependencies
+
+	$ typo install directory
+
+At this step, the typo installer creates a directory with a full version of typo and embedded rails, creates a database and launch the blog behind mongrel.
+
+To configure Apache, you can find in <i>installer</i> directory and example of the config file need to put in apache. For my configuration with Apache 2 I did the two commands :
+
+	$ ap2enmod proxy
+	$ ap2enmod proxy_http
+
+and change the servername and proxy pass instruction :
+
+	ProxyPass / http://localhost:4434/
+	ProxyPassReverse / http://localhost:4434/
+
+Where 4434 is the port configured by typo during installtion. Now just reload apache and you should see your website with a beautiful azure typo.

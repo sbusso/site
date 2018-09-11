@@ -1,0 +1,20 @@
+---
+date: "2010-03-26T00:00:00Z"
+tags:
+- blog
+- webby
+title: Back to post
+---
+
+
+
+After 2 years of almost nonexistent posting (4 posts), I've moved this blog from Typo to Webby (as planned on Feb ... 2008). The migration is on going, content was easy, other part of website, less. I will post later about the migration code.
+
+Blogging from Textmate and Webby is cooool and my server says thanks.
+
+TODO:
+* -migrate old comments to disqus- done !
+* -code highlight (ultraviolet is too much to setup)- (using gist)
+* -integrate tags- (based on aaronqian.com)
+* -google search- (could be improved)
+* ping on posting (feedburner, rubycorner, etc...)

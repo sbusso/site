@@ -1,0 +1,47 @@
+---
+date: "2007-03-27T00:00:00Z"
+tags:
+- rails
+- builder
+- hobo
+- ajuby
+title: Rails Application builders
+---
+
+
+
+Few month ago I started posts on "admin tools for Rails":http://www.rubynaut.net/articles/2006/09/02/admin-interface-for-ruby-on-rails and "advanced ruby on rails":http://www.rubynaut.net/articles/2006/09/24/advanced-ruby-on-rails to help in applications. This week end I found some frameworks doing that stuff: Application builders, that means things are on going.
+
+*hobo*
+
+* "hobo":http://www.hobocentral.net/
+* "hobo screencasts":http://www.hobocentral.net/screencasts.php
+* "hobo quick start":http://www.hobocentral.net/blog/getting-started
+
+-The most "alive" and- completed builder. It provides:
+* assitant for model creation
+* user management, roles
+* an interface to manage models
+
+If you can do with the default theme, this builder is a good start, the new website is nice and the you can find help and demos about the framework.
+
+[EDIT: there is a long article on "oreilly gmt":http://www.oreillygmt.eu/2007/02/hobo_web_app_bu.html]
+
+*ajuby*
+
+"ajuby":http://www.ajuby.com/
+
+It's another try for an Application builder -but I haven't found any activity for the last month. Is it still alive ?- [EDIT: see the comments]
+
+*Conclusion*
+
+I really think this kind of Application Builder are great for developers. Think about this, Rails is a great framework already, make development faster, but when you develop an entire Application from scratch it's not really DRY, has you have to set up again and again basis of your business needs, as user management. With Application builder don't need to repeat these steps and you have every things ready to work. It s going further than Rails then make development very Rapid.
+
+*links*
+
+[hobo]:http://www.hobocentral.net/
+
+[ajuby]:http://www.ajuby.com
+
+* "hobo":http://www.hobocentral.net/
+* "ajuby":http://www.ajuby.com/

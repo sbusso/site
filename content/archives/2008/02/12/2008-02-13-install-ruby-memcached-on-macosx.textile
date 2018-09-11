@@ -1,0 +1,25 @@
+---
+date: "2008-02-13T00:00:00Z"
+tags:
+- macosx
+- memcached
+- ruby
+title: Install ruby memcached on MacOSX
+---
+
+
+
+Classical way, download following archives and compile it in the order. Xcode has to be installed.
+
+<pre>
+tar xzf *.tar.gz
+cd
+./configure
+make
+sudo make install
+</pre>
+
+# lib need for server: "lib event":http://www.monkey.org/~provos/libevent/. "download":http://www.monkey.org/~provos/libevent-1.4.1-beta.tar.gz
+# the server: "memcached":http://www.danga.com/memcached/. "download":http://www.danga.com/memcached/dist/memcached-1.2.4.tar.gz
+# the client lib written in c: "libmemcached":http://tangent.org/552/libmemcached.html. "download":http://download.tangent.org/libmemcached-0.15.tar.gz
+# the ruby binding: <pre>sudo gem install memcached</pre> or with leopard: <pre>sudo env ARCHFLAGS="-arch i386" gem install memcached</pre>

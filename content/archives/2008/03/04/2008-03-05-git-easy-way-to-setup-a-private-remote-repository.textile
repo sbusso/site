@@ -1,0 +1,47 @@
+---
+date: "2008-03-05T00:00:00Z"
+tags:
+- git
+- remote
+- repository
+title: 'Git: Easy way to setup a private remote repository'
+---
+
+
+
+Git is different from svn and create a private repository on a remote server too. No need of gitosis or git-daemon for this.
+
+I start from an existing project and a server I already access to with ssh key.
+
+First, initialize git in your project:
+
+<pre>git init
+git add .
+git commit -m 'initial import'</pre>
+
+[update]
+
+-Then create a git copy of your project into a git archive _my_project_folder.git_.-
+
+-git clone --bare my_project_folder my_project_folder.git-
+
+Copy -this archive- the .git folder to your remote server:
+
+<pre>scp -rp .git user@server://path/to/repositories/my_project_folder.git</pre>
+
+Add this new repository in the config of your local project:
+
+<pre>git remote add my_remote_repo ssh://server/path/to/repositories/my_project_folder.git</pre>
+
+You're done. After a change you can commit and then push your change to the remote repo:
+
+<pre>git commit -m "message for change log"
+git push my_remote_repo</pre>
+
+Use your own parameters for:
+
+ * _my_project_folder_ with the folder of your project
+ * _path/to/repositories_ with the path to your repository on the remote server
+ * _my_project_repo_ with the name you want for the remote repository, usually _origin_
+
+If you need a public repository, have look to gitosis or git-daemon. Best is Github.

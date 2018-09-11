@@ -1,0 +1,17 @@
+---
+date: "2010-03-29T00:00:00Z"
+tags:
+- disqus
+- typo
+title: Migrate comments to disqus
+---
+
+
+
+I did it! After some days, I can move all the old comments to disqus and then link them to the webby posts. Here is the rake task:
+
+"export_comment_to_disqus.rb":http://gist.github.com/347114
+
+Also you need to install the update disqus gem (API ver. 1.1) from my repo or link the lib, it fixes small things need to make the export works:
+
+"disqus lib":http://github.com/sbusso/disqus

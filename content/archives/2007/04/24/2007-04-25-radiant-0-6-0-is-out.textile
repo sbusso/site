@@ -1,0 +1,22 @@
+---
+date: "2007-04-25T00:00:00Z"
+tags:
+- rails
+- radiant
+- ruby
+title: Radiant 0.6.0 is out
+---
+
+
+
+Congratulation to the team of Radiant CMS they have released a great piece of code with this version:
+
+<pre>
+$ sudo gem install radiant
+</pre>
+
+"Announce":http://radiantcms.org/blog/2007/04/24/radiant-0-6-lapidary-release/
+
+"List of changes":http://seancribbs.com/tech/2007/04/18/whats-new-in-radiant-0-6
+
+Enjoy !

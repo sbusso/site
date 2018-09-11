@@ -1,0 +1,105 @@
+---
+categories:
+- install
+date: "2011-03-30T00:00:00Z"
+tags:
+- resque
+- redis
+- delayedjob
+title: Resque, Why you should try
+---
+
+
+
+Installing redis ("a crazy fast key/value store":http://redis.io) for a website, I had a look to Resque, and give here the why I moved from the good DelayedJob. Here a short answer:
+
+* Replacing a dirty cron / curl / controller setup to launch scheduled tasks
+* Having a easy control on the scheduled tasks and failed jobs
+
+h3. Resque
+
+bq. Resque is a Redis-backed Ruby library for creating background jobs, placing those jobs on multiple queues, and processing them later.
+
+For the application, the big differences are you cannot send ruby objects and you need to specify a queue.
+
+"Resque scheduler":https://github.com/bvandenbos/resque-scheduler, a light-weight job scheduling system built on top of resque.
+
+h4. Quick installation
+
+For full details: "Resque on github":https://github.com/defunkt/resque
+
+Redis:
+
+<pre>curl -O http://redis.googlecode.com/files/redis-2.2.2.tar.gz
+tar xzf redis-2.2.2.tar.gz
+cd redis-2.2.2
+make
+sudo make install</pre>
+
+Add to you Gemfile:
+
+<pre>gem 'hiredis'
+gem 'redis'
+gem 'redis-namespace'
+gem 'yajl-ruby'
+gem 'vegas'
+gem 'sinatra'
+gem 'resque', '1.15'
+gem 'resque-scheduler'</pre>
+
+Add to your Rakefile:
+
+<pre>require 'resque/tasks'
+require 'resque_scheduler/tasks'</pre>
+
+h4. Configuration and authentication
+
+Initializer for resque <i>config/initializers/resque.rb</i>:
+
+<script src="https://gist.github.com/894121.js?file=resque.rb"></script>
+
+Schedule configuration file <i>config/resque_schedule.yml</i>:
+
+<script src="https://gist.github.com/894121.js?file=resque_schedule.yml"></script>
+
+h4. Let's start
+
+Resque workers:
+
+<pre>COUNT=5 QUEUE=* rake resque:workers</pre>
+
+Resque web interface:
+
+<pre>bundle exec resque-web -e production -s thin -L config/initializers/resque.rb</pre>
+
+And finally the resque scheduler worker:
+
+<pre>rake resque:scheduler INITIALIZER_PATH=config/initializers/resque.rb </pre>
+
+To kill the resque-web:
+
+<pre>bundle exec resque-web -K</pre>
+
+h3. Async
+
+If you use DelayedJob and want a replacement for the delay/send_later method, here a simple async method:
+
+<script src="https://gist.github.com/894121.js?file=async_job.rb"></script>
+
+h3. Deployment
+
+see the update.
+
+h3. Conclusion
+With this setup I get a more robust system to manage jobs and scheduled tasks:
+
+* The scheduler plugin, multiple queues
+* Web interface, make easy to follow exception and what's going on ("DJ gets admin":https://github.com/trevorturk/delayed_job_admin)
+* Faster to insert thousand jobs without slowing the website db (DJ can manage a mongodb now)
+
+Links:
+
+ * "Resque on github":https://github.com/defunkt/resque
+ * "Resque scheduler":https://github.com/bvandenbos/resque-scheduler
+
+update (02/04/2011): I ve just found a good post with full setup and capistrano deployment - "setting up resque":http://atevans.com/setting-up-resque

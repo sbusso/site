@@ -1,0 +1,24 @@
+---
+date: "2007-09-20T00:00:00Z"
+tags:
+- ruby
+- rails
+- authentication
+- poll
+title: 'Ruby authentication system: Poll results'
+---
+
+
+
+And the winner of 68 votes is ....
+
+	*acts_as_authenticated* with 47,06% of the votes
+
+followed by
+
+ * salt / sugar systems, 35,29%
+ * other..., 13,24%
+ * openid, 2,94%
+ * auth_generator, 1,47%
+
+Congratulations to the winner, it is a very nice and neat plugin. BTW at the RailsConf, we had a demonstration of an HTTP_AUTHENTICATION as a new feature of Rails 2.0. More's coming...

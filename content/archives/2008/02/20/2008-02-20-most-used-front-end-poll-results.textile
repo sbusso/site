@@ -1,0 +1,24 @@
+---
+date: "2008-02-20T00:00:00Z"
+tags:
+- apache
+- nginx
+- lighttpd
+- ruby
+- stack
+- poll
+title: 'Most used front end: poll results '
+---
+
+
+
+For severals month now I put a poll about which front end people use for their website. Even if it s not a reference with only 85 votes I would like to publsih some result. Of course as the content of this website is ruby oriented, then the results will be also.
+
+First it started with most of votes for apache. At the end Apache it's still the  first:
+
+ * 47%: apache
+ * 40%: nginx
+ * 7% : lighttpd
+ * 5% : others
+
+The result for nginx is over general real stats but for the trend is here and nginx is more and more the choice for a ruby stack as I did present in my "last post":http://www.rubynaut.net/articles/2008/02/19/railsconf-scaling-a-rails-app-part-3-of-3

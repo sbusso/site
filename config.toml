@@ -1,0 +1,81 @@
+baseurl = "https://sbusso.github.io" # Hostname (and path) to the root.
+title = "stephanebusso" # Site title.
+theme = "coder" # Set the theme.
+languagecode = "en" # The site’s language code used to generate RSS.
+defaultcontentlanguage = "en" # The default content language.
+
+paginate = 20 # Default number of pages per page in pagination.
+canonifyurls = true # Enable to turn relative URLs into absolute.
+
+# pygmentsstyle = "b2" # Color-theme or style for syntax highlighting.
+pygmentsUseClassic            = false
+# https://help.farbox.com/pygments.html
+# https://github.com/alecthomas/chroma
+# hugo gen chromastyles --style=autumn        >  syntax.autumn.css
+# ...
+pygmentsUseClasses            = true
+pygmentscodefences = true # Enable code fence background highlighting.
+pygmentscodefencesguesssyntax = true # Enable syntax guessing for code fences without specified language.
+pygmentsOptions = "linenos=table"
+PygmentsStyle = "dracula"
+# disqusShortname = "yourdiscussshortname" # Enable or disable Disqus.
+
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = ""
+
+
+# RSS Feed
+# Do not build RSS files
+disableRSS = false
+# maximum number of items in the RSS feed
+rssLimit   = 10
+
+[params] # theme parameters
+    author = "Stephane Busso" # Author's name.
+    info = "Devops / Software Engineer" # Author's job title or info.
+    description = "Stephane Busso's technical website" # Site description.
+    keywords = "blog,developer,golang,ruby" # Site keywords.
+    avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
+
+    footercontent = "Build. Measure. Learn." # Add footer content
+
+    # Whether you want to hide copyright and credits in the footer.
+    hideCredits = false
+    hideCopyright = false
+
+    # Custom CSS
+    custom_css = ["css/override.css", "css/syntax.css"]
+
+# Social links
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github fa-2x"
+    weight = 1
+    url = "https://github.com/sbusso/"
+# [[params.social]]
+#     name = "Gitlab"
+#     icon = "fab fa-gitlab fa-2x"
+#     weight = 2
+#     url = "https://gitlab.com/johndoe/"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter fa-2x"
+    weight = 3
+    url = "https://twitter.com/sbusso/"
+
+# Menu links
+# [[menu.main]]
+#     name = "Blog"
+#     weight = 1
+#     url  = "/posts/"
+# # [[menu.main]]
+# #     name = "Projects"
+# #     weight = 2
+# #     url  = "/projects/"
+
+
+
+# [[menu.main]]
+#     name = "About"
+#     weight = 4
+#     url = "/about/"
